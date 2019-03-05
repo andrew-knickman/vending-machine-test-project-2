@@ -29,6 +29,20 @@ public class VendingMachineItemTest {
 		assertTrue(vmi instanceof VendingMachineItem);
 	}
 	
+	/**Test for VendingMachineItem() with less-than-zero price*/
+	@Test
+	public void testVendingMachineItemNegativePrice(){
+		VendingMachineItem nitem;
+		boolean thrown = false;
+		try{
+			nitem = new VendingMachineItem("Invalid Item", -1.99);
+		}
+		catch(VendingMachineException e){
+			thrown = true;
+		}
+		assertTrue(thrown);
+	}
+	
 	/**Test for the getName() method of the VendingMachineItem class.*/
 	@Test
 	public void testGetName() {

@@ -199,7 +199,7 @@ public class VendingMachineTest {
 		throws Exception {
 		VendingMachine fixture = new VendingMachine();
 		fixture.balance = 1.0;
-		double amount = -4.9E-324;
+		double amount = -5.0;
 
 		fixture.insertMoney(amount);
 

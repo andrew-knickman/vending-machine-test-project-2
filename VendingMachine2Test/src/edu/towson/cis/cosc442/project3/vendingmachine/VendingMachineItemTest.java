@@ -33,25 +33,6 @@ public class VendingMachineItemTest {
 	}
 
 	/**
-	 * Run the VendingMachineItem(String,double) constructor test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 3/4/19 11:39 PM
-	 */
-	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
-	public void testVendingMachineItem_2()
-		throws Exception {
-		String name = "";
-		double price = -4.9E-324;
-
-		VendingMachineItem result = new VendingMachineItem(name, price);
-
-		// add additional test code here
-		assertNotNull(result);
-	}
-
-	/**
 	 * Run the String getName() method test.
 	 *
 	 * @throws Exception
@@ -115,14 +96,4 @@ public class VendingMachineItemTest {
 		// Add additional tear down code here
 	}
 
-	/**
-	 * Launch the test.
-	 *
-	 * @param args the command line arguments
-	 *
-	 * @generatedBy CodePro at 3/4/19 11:39 PM
-	 */
-	public static void main(String[] args) {
-		new org.junit.runner.JUnitCore().run(VendingMachineItemTest.class);
-	}
 }

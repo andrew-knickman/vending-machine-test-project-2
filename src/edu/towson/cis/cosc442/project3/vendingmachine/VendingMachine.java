@@ -74,7 +74,7 @@ public class VendingMachine {
 	 * @return The slot index 
 	 * @throws VendingMachineException
 	 */
-	private int getSlotIndex(String code) throws VendingMachineException {
+	public int getSlotIndex(String code) throws VendingMachineException {
 		if( code.equals(A_CODE)) {
 			return 0;
 		} else if ( code.equals(B_CODE)) {

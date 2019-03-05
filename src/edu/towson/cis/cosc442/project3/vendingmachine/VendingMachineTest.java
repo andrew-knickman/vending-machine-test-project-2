@@ -34,6 +34,31 @@ public class VendingMachineTest {
 		assertTrue(vm.getItem("A") instanceof VendingMachineItem);
 	}
 	
+	/**Tests if getSlotIndex returns correct code value*/
+	@Test
+	public void testGetSlotIndex()
+	{
+		assertEquals(0.0, vm.getSlotIndex("A"), 0.001);
+		assertEquals(1.0, vm.getSlotIndex("B"), 0.001);
+		assertEquals(2.0, vm.getSlotIndex("C"), 0.001);
+		assertEquals(3.0, vm.getSlotIndex("D"), 0.001);
+	}
+	
+	/**Tests getSlotIndex for invalid code*/
+	@Test
+	public void testGetSlotIndexInvalidCode() throws VendingMachineException
+	{
+		boolean thrown = false;
+		try
+		{
+			vm.getSlotIndex("Z");
+		}
+		catch(VendingMachineException e){
+			thrown = true;
+		}
+		assertTrue(thrown);
+	}
+	
 	/**Tests if addItem methods adds VendingMachineItem in an occupied slot*/
 	@Test
 	public void testAddItemOverload(){

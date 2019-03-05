@@ -83,6 +83,18 @@ public class VendingMachineTest {
 		assertEquals(0.00,vm.balance,0.001);
 	}
 	
+	/**Tests if insertMoney is capable of removing money*/
+	@Test
+	public void testInsertInvalidMoney(){
+		boolean thrown = false;
+		try{
+			vm.insertMoney(-1.00);
+		}
+		catch(VendingMachineException e){
+			thrown = true;
+		}
+		assertTrue(thrown);
+	}
 	/**Tests is getBalance method returns correct balance of VendingMachine*/
 	@Test
 	public void testGetBalance() {

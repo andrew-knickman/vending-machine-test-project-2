@@ -44,10 +44,7 @@ public class VendingMachine {
 	
 	// "is empty" part of error message
 	private static final String IS_EMPTY_MESSAGE = " is empty -- cannot remove item";
-	
-	//"insufficient funds" error message
-	private static final String INSUFFICIENT_FUNDS_MESSAGE = " insufficient funds";
-	
+		
 	// The amount of money in the vending machine currently
 	protected double balance;
 

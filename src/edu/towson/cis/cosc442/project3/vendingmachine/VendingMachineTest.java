@@ -1,10 +1,12 @@
 package edu.towson.cis.cosc442.project3.vendingmachine;
 
 import static org.junit.Assert.*;
-
+import org.hamcrest.*;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class VendingMachineTest {
 
@@ -44,19 +46,14 @@ public class VendingMachineTest {
 		assertEquals(3.0, vm.getSlotIndex("D"), 0.001);
 	}
 	
+	@Rule
+	public ExpectedException expected = ExpectedException.none();
 	/**Tests getSlotIndex for invalid code*/
 	@Test
 	public void testGetSlotIndexInvalidCode() throws VendingMachineException
 	{
-		boolean thrown = false;
-		try
-		{
-			vm.getSlotIndex("Z");
-		}
-		catch(VendingMachineException e){
-			thrown = true;
-		}
-		assertTrue(thrown);
+		expected.expect(VendingMachineException.class);
+		vm.getSlotIndex("Z");
 	}
 	
 	/**Tests if addItem methods adds VendingMachineItem in an occupied slot*/

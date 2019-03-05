@@ -103,7 +103,24 @@ public class VendingMachineTest {
 		vm.balance = 0.0;
 		assertEquals(0.00,vm.balance,0.001);
 	}
-
+	
+	/**Tests makePurchase method for attempt of null item purchase*/
+	@Test
+	public void testMakePurchaseNullItem()
+	{
+		vm.addItem(null, "A");
+		assertFalse(vm.makePurchase("A"));
+	}
+	
+	/**Tests makePurchase method for insufficient balance*/
+	@Test
+	public void testMakePurchaseInsufficientFunds()
+	{
+		vm.balance = 1.00;
+		vm.addItem(vmi, "A");
+		assertFalse(vm.makePurchase("A"));
+	}
+	
 	/**Tests if makePurchase is able to purchase valid item from VendingMachine*/
 	@Test
 	public void testMakePurchase() {

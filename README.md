@@ -1,2 +1,2 @@
 vending-machine-test-project-2  
-Test code for pre-existing project.
+Test code expanding on vending-machine-test-project.
